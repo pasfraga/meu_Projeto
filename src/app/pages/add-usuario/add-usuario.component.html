@@ -1,0 +1,23 @@
+<section class="container">
+<form>
+        <div class="form-group">
+                <label for="">Nome</label>
+                <input type="text" class="form-control" [(ngModel)]="usuario.nome" placeholder="Seu nome">
+                <small class="form-text text-muted"></small>
+              </div>
+        <div class="form-group">
+          <label for="">Endereço de email</label>
+          <input type="email" class="form-control" [(ngModel)] aria-describedby="emailHelp" placeholder="Seu email">
+          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+</section>
