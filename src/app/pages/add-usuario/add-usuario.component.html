@@ -1,23 +1,31 @@
 <section class="container">
-<form>
-        <div class="form-group">
-                <label for="">Nome</label>
-                <input type="text" class="form-control" [(ngModel)]="usuario.nome" placeholder="Seu nome">
-                <small class="form-text text-muted"></small>
-              </div>
-        <div class="form-group">
-          <label for="">Endereço de email</label>
-          <input type="email" class="form-control" [(ngModel)] aria-describedby="emailHelp" placeholder="Seu email">
-          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Senha</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
-      </form>
+
+  <form #fc=ngForm (ngSubmit)="onsubmit(fc)">
+    <div class="form-group">
+      <label for="">Nome</label>
+      <input type="text" class="form-control" [(ngModel)]="usuario.nome" name="nome" required placeholder="Seu nome">
+      <small class="form-text text-muted"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="">Endereço de email</label>
+      <input type="email" class="form-control" [(ngModel)]="usuario.email" aria-describedby="emailHelp" name="email" placeholder="Seu email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Senha</label>
+      <input type="password" class="form-control" [(ngModel)]="usuario.pws" placeholder="Senha" name="pws" required minlength="6" #pws="ngModel">
+      <small class="form-text text-danger" *ngIf="pws.invalid">Senha muito Curta</small>
+    </div>
+
+    <div class="form-group">
+      <label for=""></label>
+      <input type="password" class="form-control" (ngModel)="conf" placeholder="Confirmar Senha" name="conf" required #conf="ngModel">
+      <small class="form-text form-danger" *ngIf="pws.value != conf.value">Senhas Diferentes</small>
+    </div>
+    <div class="form text-right">
+      <button type="submit" class="btn btn-primary ml-2" [disabled]="fc.invalid || pws.value != conf.value ">Salvar</button>
+      <button type="reset" class="btn btn-primary ml-2">Cancelar</button>
+    </div>
+  </form>
 </section>
