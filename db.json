@@ -1,0 +1,14 @@
+{
+  "usuarios": [
+    {
+      "id": 0
+    },
+    {
+      "ativo": true,
+      "nome": "paulo",
+      "email": "paulo@teste.com",
+      "pws": "123456",
+      "id": 1
+    }
+  ]
+}

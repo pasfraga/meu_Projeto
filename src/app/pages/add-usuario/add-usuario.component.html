@@ -10,10 +10,10 @@
     <div class="form-group">
       <label for="">Endereço de email</label>
       <input type="email" class="form-control" [(ngModel)]="usuario.email" aria-describedby="emailHelp" name="email" placeholder="Seu email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel">
-      <span class="help-block" *ngIf="email.errors?.required && email.touched">
+      <span class="help-block text-danger" *ngIf="email.errors?.required && email.touched">
         Campo Obrigatório
       </span>
-      <span class="help-block" *ngIf="email.errors?.pattern && email.touched">
+      <span class="help-block text-danger" *ngIf="email.errors?.pattern && email.touched">
         Email Invalido
       </span>
     </div>
@@ -21,13 +21,13 @@
     <div class="form-group">
       <label for="exampleInputPassword1">Senha</label>
       <input type="password" class="form-control" [(ngModel)]="usuario.pws" placeholder="Senha" name="pws" required minlength="6" #pws="ngModel">
-      <small class="form-text text-danger" *ngIf="pws.invalid">Senha muito Curta</small>
+      <small class="form-text text-danger" *ngIf="pws.invalid && pws.dirty">Senha muito Curta</small>
     </div>
 
     <div class="form-group">
       <label for=""></label>
       <input type="password" class="form-control" (ngModel)="conf" placeholder="Confirmar Senha" name="conf" required #conf="ngModel">
-      <small class="form-text form-danger" *ngIf="pws.value != conf.value">Senhas Diferentes</small>
+      <small class="form-text text-danger" *ngIf="pws.value != conf.value && conf.dirty">Senhas Diferentes</small>
     </div>
     <div class="form text-right">
       <button type="submit" class="btn btn-primary ml-2" [disabled]="fc.invalid || pws.value != conf.value ">Salvar</button>

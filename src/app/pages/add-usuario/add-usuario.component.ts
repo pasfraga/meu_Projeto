@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../model/usuario';
+import { UsuarioService } from '../../services/usuario.service';
 
 
 @Component({
@@ -11,11 +12,22 @@ export class AddUsuarioComponent implements OnInit {
 
   protected usuario:Usuario = new Usuario;
 
-  constructor() { }
+  constructor(
+    protected usuarioService: UsuarioService
+  ) { }
 
   ngOnInit() {
   }
   onsubmit(form){
-    console.log(form);
+    console.log(this.usuario);
+    this.usuarioService.save(this.usuario)
+      .subscribe(
+        res=>{
+          console.log("Cadastrado!",res);
+        },
+        erro=>{
+          console.log("Não Cadastrado",erro);
+        }
+      )
   }
 }
