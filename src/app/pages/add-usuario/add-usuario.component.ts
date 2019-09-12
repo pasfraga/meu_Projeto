@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../model/usuario';
 import { UsuarioService } from '../../services/usuario.service';
+import { Alert } from 'selenium-webdriver';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +15,9 @@ export class AddUsuarioComponent implements OnInit {
   protected usuario:Usuario = new Usuario;
 
   constructor(
-    protected usuarioService: UsuarioService
+    protected usuarioService: UsuarioService,
+    private router:Router
+    
   ) { }
 
   ngOnInit() {
@@ -24,9 +28,12 @@ export class AddUsuarioComponent implements OnInit {
       .subscribe(
         res=>{
           console.log("Cadastrado!",res);
+          alert("Cadastrado!");
+          this.router.navigate(['/']);
         },
         erro=>{
           console.log("Não Cadastrado",erro);
+          alert("Não Cadastrado");
         }
       )
   }
