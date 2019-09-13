@@ -1,0 +1,36 @@
+<section class="container">
+
+    <form #fc=ngForm (ngSubmit)="onsubmit(fc)">
+      <div class="form-group">
+        <label for="">Nome</label>
+        <input type="text" class="form-control" [(ngModel)]="evento.nome" name="nome" required placeholder="Nome do Evento">
+        <small class="form-text text-muted"></small>
+      </div>
+  
+      <div class="form-group">
+        <label for="">Tema</label>
+        <input type="text" class="form-control" [(ngModel)]="evento.tema" name="tema" placeholder="Tema do Evento">
+        <small class="form-text text-muted"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="">Data</label>
+        <input type="date" class="form-control" [(ngModel)]="evento.data" name="data" required placeholder="Data do Evento">
+        <small class="form-text text-muted"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="">Horario</label>
+        <input type="time" class="form-control" [(ngModel)]="evento.horario" name="horario" required placeholder="Horario do Evento">
+        <small class="form-text text-muted"></small>
+      </div>
+  
+      
+  
+      
+      <div class="form text-right">
+        <button type="submit" class="btn btn-primary ml-2" [disabled]="fc.invalid">Salvar Evento</button>
+        <button type="reset" class="btn btn-primary ml-2">Cancelar</button>
+      </div>
+    </form>
+  </section>

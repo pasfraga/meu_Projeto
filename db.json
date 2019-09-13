@@ -5,9 +5,22 @@
     },
     {
       "ativo": true,
-      "nome": "Paulo",
-      "email": "paulo@teste.com",
+      "nome": "Jessica",
+      "email": "jessica@louca.com",
       "pws": "123456",
+      "id": 1
+    }
+  ],
+  "eventos": [
+    {
+      "id": 0
+    },
+    {
+      "ativo": true,
+      "nome": "Festa",
+      "tema": "Junina",
+      "data": "2020-08-25",
+      "horario": "22:00",
       "id": 1
     }
   ]
