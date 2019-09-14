@@ -7,3 +7,6 @@ NG SERVE --OPEN
 json-server -w db.json
 
 ng s -o
+
+
+GRID EM CARD - COM BOOTSTRAP

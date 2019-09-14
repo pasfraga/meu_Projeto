@@ -1,5 +1,7 @@
 <section class="container">
-    <table class="table" *ngIf="eventos | async as users">
+    
+    
+    <!--<table class="table" *ngIf="eventos | async as users">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -15,8 +17,28 @@
             <td>{{user.data}}</td>
             <td>{{user.horario}}</td>
         </tr>    
-    </table>
+    </table>-->
+
+    <div class="card" style="width: 18rem;" *ngIf="eventos | async as users">
+        <div class="card-body" *ngFor="let user of users">
+
+          <h5 class="card-title">Nome</h5>
+          <p class="card-text">Tema</p>
+          <p class="card-text">Data</p>
+          <p class="card-text">Horario</p>
+          <a href="ID" class="btn btn-primary">ID</a>
+
+          <h5 class="card-title">{{user.nome}}</h5>
+          <p class="card-text">{{user.tema}}</p>
+          <p class="card-text">{{user.data}}</p>
+          <p class="card-text">{{user.horario}}</p>
+          <a href="{{user.id}}" class="btn btn-primary">{{user.id}}</a>
+          
+          
+          
+          
+        </div>
+      </div>
 
 </section>
-<app-list-add-evento></app-list-add-evento>
 
