@@ -1,9 +1,6 @@
 {
   "usuarios": [
     {
-      "id": 0
-    },
-    {
       "ativo": true,
       "nome": "Jessica",
       "email": "jessica@louca.com",
@@ -12,9 +9,6 @@
     }
   ],
   "eventos": [
-    {
-      "id": 0
-    },
     {
       "ativo": true,
       "nome": "Festa",
@@ -38,6 +32,14 @@
       "data": "2019-12-25",
       "horario": "00:00",
       "id": 3
+    },
+    {
+      "ativo": true,
+      "nome": "Feijoada",
+      "tema": "Alunos",
+      "data": "2019-12-20",
+      "horario": "14:00",
+      "id": 4
     }
   ]
 }
