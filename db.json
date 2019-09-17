@@ -6,6 +6,14 @@
       "email": "jessica@louca.com",
       "pws": "123456",
       "id": 1
+    },
+    {
+      "ativo": true,
+      "cep": "21240190",
+      "nome": "Paulo",
+      "email": "paulo@teste.com",
+      "pws": "123456",
+      "id": 2
     }
   ],
   "eventos": [
