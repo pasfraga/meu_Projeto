@@ -21,12 +21,12 @@
 
     <div class="" *ngIf="eventos | async as users">
         <div class="row">
-            <div class="card col-2 m-1" *ngFor="let user of users">
+            <div class="card col-12 col-md-4 m-1" *ngFor="let user of users">
                 <div class="card-body">
-                    <h5 class="card-title">{{user.nome}}</h5>
+                    <h2 class="card-title">{{user.nome}}</h2>
                     <p class="card-text">{{user.tema}}</p>
-                    <p class="card-text">{{user.data}}</p>
-                    <p class="card-text">{{user.horario}}</p>
+                    <p class="text-danger font-weight-bold">{{user.data | date:"dd/MM/yyyy"}}</p>
+                    <p class="text-danger font-weight-bold">{{user.horario}}</p>
                     <a href="{{user.id}}" class="btn btn-primary">Saiba Mais...</a>
                 </div>
             </div>

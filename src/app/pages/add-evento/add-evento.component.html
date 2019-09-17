@@ -15,7 +15,7 @@
 
       <div class="form-group">
         <label for="">Data</label>
-        <input type="date" class="form-control" [(ngModel)]="evento.data" name="data" required placeholder="Data do Evento">
+        <input type="date" class="form-control" [(ngModel)]="evento.data" name="data" required placeholder="Data do Evento" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
         <small class="form-text text-muted"></small>
       </div>
 
